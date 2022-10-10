@@ -5,3 +5,12 @@ Componentes funcionales
 - El nombre de la funcion debe empezar con Mayuscula SIEMPRE (sino lo toma como un tag de HTML y no como componente)
 - La funcion debe retornar algo (siempre debe ser un solo elemento padre)
 - Se debe exportar la funcion
+- Cuando exporto por default no tengo que ponerle llaves, si exporto sin default en el import debo poner {que estoy sacando}
+
+Componentes 
+
+- Props
+- States
+- Ciclo de vida
+- Metodos de ciclo de vida
+

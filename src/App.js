@@ -1,11 +1,16 @@
 import React from "react";
 import "./App.css";
-import Header from "./Components/Navbar/Navbar";
+import Navbar from "./Components/Navbar/Navbar";
+import ItemListContainer from "./Components/ItemListContainer/ItemListContainer";
 
 const App = () =>{
+
+    const mensaje = "Bienvenidos a la cafeteria Axemi donde podra disfrutar de nuestros productos tanto de Cafeteria como nuestra Pasteleria casera"
+
     return (
         <>
-            <Header/> 
+            <Navbar/>
+            <ItemListContainer greeting = {mensaje} />
         </> 
     )
 }
