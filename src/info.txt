@@ -7,10 +7,101 @@ Componentes funcionales
 - Se debe exportar la funcion
 - Cuando exporto por default no tengo que ponerle llaves, si exporto sin default en el import debo poner {que estoy sacando}
 
+
 Componentes 
 
 - Props
 - States
 - Ciclo de vida
 - Metodos de ciclo de vida
+
+
+Hooks
+
+- Siempre comienzan con "use"
+- Siempre se declaran dentro de un componente
+- Son funciones
+- No se pueden declarar en condicionales (if)
+
+
+
+Ciclos de vida de componentes y Metodos
+
+- Montaje (mount)
+    -constructor
+    -render
+    -componentDidMount
+
+- Actualizacion (update)
+    -constructor
+    -render
+    -componentDidUpdate
+
+- Desmontaje (unmount)
+    -componentWillUnmount
+
+
+
+useEffect
+
+-Con esta configuracion el useEffect se ejecuta solo en el montaje:
+
+useEffect(() =>{
+    //bloque de codigo;
+}, [] );
+
+
+-Con esta configuracion el useEffect se ejecuta en el montaje y cuando detecta cambios en "valores" del array de dependencia:
+
+useEffect(() =>{
+    //bloque de codigo;
+}, [valores] );
+
+
+-Con esta configuracion el useEffect se ejecuta en el montaje y actualizaciones:
+
+useEffect(() =>{
+    //bloque de codigo;
+});
+
+
+
+XHR - Fetch (then async/await axios)
+
+http:
+
+A - B 
+Request - Response 
+Cliente - Server
+
+
+Request - Cliente:
+
+ - URL
+ - Metodo GET - POST - DELETE - PUT
+ - Headers
+ - Body
+ - Version 1.1
+
+Response - Server:
+
+ - Version 
+ - Headers
+ - Body
+ - Codigo 100 - 200 - 300 - 400 - 500
+
+
+ AJAX (Asynchronous Javascript and XML)
+
+ fetch(URL, {
+    method: "POST",
+    headers: {
+        'Content-type': 'application/json'
+    },
+    body: JSON.stringify({nombre:"Axel"})
+ })
+
+ 
+
+
 

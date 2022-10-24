@@ -1,7 +1,9 @@
 import React from "react";
 import "./App.css";
 import Navbar from "./Components/Navbar/Navbar";
-import ItemListContainer from "./Components/ItemListContainer/ItemListContainer";
+import {ItemListContainer} from "./Containers/ItemListContainer/ItemListContainer";
+import Productos from "./Containers/ItemListContainer/Items/Productos";
+import {BrowserRouter, Routes, Route } from "react-router-dom";
 
 const App = () =>{
 
@@ -9,9 +11,12 @@ const App = () =>{
 
     return (
         <>
+        <BrowserRouter>
             <Navbar/>
             <ItemListContainer greeting = {mensaje} />
-        </> 
+            <Productos/> 
+        </BrowserRouter>
+        </>
     )
 }
 
