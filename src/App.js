@@ -1,9 +1,9 @@
 import React from "react";
 import "./App.css";
 import Navbar from "./Components/Navbar/Navbar";
-import {ItemListContainer} from "./Containers/ItemListContainer/ItemListContainer";
-import Productos from "./Containers/ItemListContainer/Items/Productos";
+import {ItemListContainer} from "./Containers/ItemListContainer/ItemListContainer/ItemListContainer";
 import {BrowserRouter, Routes, Route } from "react-router-dom";
+import { ItemDetailContainer } from "./Containers/ItemDetailContainer/ItemDetailContainer";
 
 const App = () =>{
 
@@ -13,8 +13,11 @@ const App = () =>{
         <>
         <BrowserRouter>
             <Navbar/>
-            <ItemListContainer greeting = {mensaje} />
-            <Productos/> 
+            <Routes>
+                <Route path="/" element={<ItemListContainer greeting={mensaje} />} />
+                <Route path="/categoria/:id" element={<ItemListContainer greeting={mensaje} />} />
+                <Route path="/producto/:id" element={<ItemDetailContainer />} />
+            </Routes>   
         </BrowserRouter>
         </>
     )

@@ -10,16 +10,20 @@ const Navbar = (props) =>{
 
     return (
         <header style={styles.container}>
+            <Link style={styles.imagenes} to="/">
             <img style={styles.imagenes} src={logo} alt="" />
+            </Link>
             <h1> Cafeteria y Pasteleria Axemi </h1>
             <nav>
                 <Link style={styles.categorias} to="/"> Inicio</Link>
-                <Link style={styles.categorias} to="/cafeteria"> Cafeteria</Link>
-                <Link style={styles.categorias} to="/pasteleria"> Pasteleria</Link>
-                <Link style={styles.categorias} to="/productoscaseros"> Productos Caseros</Link>
+                <Link style={styles.categorias} to="/categoria/cafeteria"> Cafeteria</Link>
+                <Link style={styles.categorias} to="/categoria/pasteleria"> Pasteleria</Link>
+                <Link style={styles.categorias} to="/categoria/productoscaseros"> Productos Caseros</Link>
             </nav>
             {children}
+            <Link to="/cart">
             <CartWidget/>
+            </Link>
         </header>
     )
 }
