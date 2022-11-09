@@ -13,12 +13,12 @@ const Navbar = (props) =>{
             <Link style={styles.imagenes} to="/">
             <img style={styles.imagenes} src={logo} alt="" />
             </Link>
-            <h1> Cafeteria y Pasteleria Axemi </h1>
+            <h1> Tienda de productos Axemi </h1>
             <nav>
                 <Link style={styles.categorias} to="/"> Inicio</Link>
-                <Link style={styles.categorias} to="/categoria/cafeteria"> Cafeteria</Link>
-                <Link style={styles.categorias} to="/categoria/pasteleria"> Pasteleria</Link>
-                <Link style={styles.categorias} to="/categoria/bebidas"> Bebidas </Link>
+                <Link style={styles.categorias} to="/categoria/ropa"> Ropa</Link>
+                <Link style={styles.categorias} to="/categoria/electronica"> Electronica</Link>
+                <Link style={styles.categorias} to="/categoria/joyeria"> Joyeria </Link>
             </nav>
             {children}
             <Link to="/cart">

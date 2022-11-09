@@ -38,13 +38,13 @@ const Item = ({ producto }) => {
             {producto.title}
           </Typography>
           <Typography variant="body2" color="text.secondary" style={styles.title}>
-            ${producto.precio}
+            ${producto.price}
           </Typography>
         </CardContent>
       </CardActionArea>
-      <CardActions >
-        <Link to={"/producto/" + producto.id}>
-          <Button size="small" color="primary" style={styles.button}>
+      <CardActions style={styles.button} >
+        <Link to={"/producto/" + producto.id} style={styles.button} >
+          <Button size="small" color="primary"  style={styles.button}>
             Ver Detalles
           </Button>
         </Link>
@@ -69,7 +69,8 @@ const styles = {
   button: {
     color: "black",
     textDecoration: "none",
-    textAlign: "center"
+    textAlign: "center",
+    justifyContent: "center"
   },
 };
 

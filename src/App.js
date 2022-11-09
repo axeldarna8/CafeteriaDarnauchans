@@ -7,7 +7,7 @@ import { ItemDetailContainer } from "./Containers/ItemDetailContainer/ItemDetail
 
 const App = () =>{
 
-    const mensaje = "Bienvenidos a la cafeteria Axemi donde podra disfrutar de nuestros productos tanto de Cafeteria como nuestra Pasteleria casera"
+    const mensaje = "Bienvenidos a la tienda Axemi donde podra disfrutar de variedad de productos"
 
     return (
         <>
