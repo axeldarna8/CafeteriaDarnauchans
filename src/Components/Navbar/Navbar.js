@@ -18,7 +18,7 @@ const Navbar = (props) =>{
                 <Link style={styles.categorias} to="/"> Inicio</Link>
                 <Link style={styles.categorias} to="/categoria/cafeteria"> Cafeteria</Link>
                 <Link style={styles.categorias} to="/categoria/pasteleria"> Pasteleria</Link>
-                <Link style={styles.categorias} to="/categoria/productoscaseros"> Productos Caseros</Link>
+                <Link style={styles.categorias} to="/categoria/bebidas"> Bebidas </Link>
             </nav>
             {children}
             <Link to="/cart">

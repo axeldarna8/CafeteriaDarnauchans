@@ -1,9 +1,17 @@
+import capuccino from '../../assets/capuccino1.png'
+import espresso from '../../assets/espresso1.png'
+import te from '../../assets/tecito1.png'
+import gaseosa from '../../assets/cocacola1.png'
+import licuado from '../../assets/licuado1.png'
+import cerveza from '../../assets/cerveza1.png'
+
+
 const datos = [
     {
       precio: 150,
       id: 1,
       title: "Capuccino",
-      image: "https://www.pronto.es/files/main_image/uploads/2021/04/14/62aa25ff21ed4.jpeg",
+      image: capuccino,
       especial: 'Leche entera, descremada o de almendras',
       tamaño: 'Mediano, Grande',
       alt: 'Capuccino',
@@ -13,7 +21,7 @@ const datos = [
       precio: 100,
       id: 2,
       title: "Espresso",
-      image: "../../assets/espresso1.png",
+      image: espresso,
       especial : "Corto, Largo",
       alt: 'Espresso',
       stock: 15
@@ -22,7 +30,7 @@ const datos = [
       precio: 100,
       id: 3,
       title: "Té",
-      image: "../images/tecito1.png",
+      image: te,
       especial : "Negro, Verde, Frutos del bosque",
       alt: 'Te',
       stock: 15
@@ -31,7 +39,7 @@ const datos = [
       precio: 180,
       id: 4,
       title: "Gaseosa",
-      image: "../images/cocacola1.png",
+      image: gaseosa,
       especial : "Comun, Light, Zero",
       tamaño : "Pequeña, Grande",
       alt: 'Gaseosa',
@@ -41,7 +49,7 @@ const datos = [
       precio: 120,
       id: 5,
       title: "Licuado",
-      image: "../images/licuado1.png",
+      image: licuado,
       especial : "Banana, Durazo, Frutilla",
       tamaño : "Mediano, Grande",
       alt: 'Licuado',
@@ -51,7 +59,7 @@ const datos = [
       precio: 170,
       id: 6,
       title: "Cerveza",
-      image: "../images/cerveza1.png",
+      image: cerveza,
       especial : "Ipa, Roja, Negra",
       tamaño : "Media pinta, Una pinta",
       alt: 'Cerveza',

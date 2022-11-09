@@ -9,7 +9,6 @@ import {
   CardActions,
 } from "@mui/material";
 import { Link } from "react-router-dom";
-import ItemCount from "../../../Components/ItemCount/ItemCount";
 
 
 
@@ -38,19 +37,19 @@ const Item = ({ producto }) => {
           >
             {producto.title}
           </Typography>
-          <Typography variant="body2" color="text.secondary">
+          <Typography variant="body2" color="text.secondary" style={styles.title}>
             ${producto.precio}
           </Typography>
         </CardContent>
       </CardActionArea>
-      <CardActions>
+      <CardActions >
         <Link to={"/producto/" + producto.id}>
-          <Button size="small" color="primary">
+          <Button size="small" color="primary" style={styles.button}>
             Ver Detalles
           </Button>
         </Link>
       </CardActions>
-      <ItemCount stock={5} initial={1} onAdd={onAdd}/>
+      
     </Card>
   );
 };
@@ -64,9 +63,13 @@ const styles = {
     backgroundColor: "rgba(249, 220, 92, 0.3)",
   },
   title: {
-    textOverflow: "ellipsis",
-    overflow: "hidden",
-    height: 100,
+    textOverflow: "ellipsis",  
+    textAlign: "center"
+  },
+  button: {
+    color: "black",
+    textDecoration: "none",
+    textAlign: "center"
   },
 };
 
