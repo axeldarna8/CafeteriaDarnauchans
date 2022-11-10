@@ -16,9 +16,10 @@ const Navbar = (props) =>{
             <h1> Tienda de productos Axemi </h1>
             <nav>
                 <Link style={styles.categorias} to="/"> Inicio</Link>
-                <Link style={styles.categorias} to="/categoria/ropa"> Ropa</Link>
-                <Link style={styles.categorias} to="/categoria/electronica"> Electronica</Link>
-                <Link style={styles.categorias} to="/categoria/joyeria"> Joyeria </Link>
+                <Link style={styles.categorias} to="/categoria/men's clothing"> Ropa de hombre </Link>
+                <Link style={styles.categorias} to="/categoria/women's clothing"> Ropa de mujer </Link>
+                <Link style={styles.categorias} to="/categoria/electronics"> Electronica </Link>
+                <Link style={styles.categorias} to="/categoria/jewelery"> Joyeria </Link>
             </nav>
             {children}
             <Link to="/cart">

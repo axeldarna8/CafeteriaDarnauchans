@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import {styles} from './ItemListContainer.style';
 import ItemList from "../ItemList/ItemList";
 import { useParams } from "react-router-dom";
-import  datos  from '../../Datos/Datos';
 
 
 
@@ -23,7 +22,6 @@ export const ItemListContainer = (props) => {
             const productos = data.map(item => {
               return {...item, stock:Math.floor(Math.random() * 50)}
             });
-            console.log(productos);
             setProducts(productos);
           } catch {
             console.log("error");
@@ -32,7 +30,7 @@ export const ItemListContainer = (props) => {
           }
         };
         getProducts();
-      }, []);
+      }, [id, URL_BASE, URL_CAT]);
     
     return(
         <>

@@ -17,9 +17,9 @@ const ItemCount = ({ stock, initial, onAdd }) => {
 
   return (
     <div style={styles.container}>
-      <button onClick={subtract}>-</button>
+      <button onClick={subtract} style={styles.button}>-</button>
       <h2>{count}</h2>
-      <button onClick={add}>+</button>
+      <button onClick={add} style={styles.button} >+</button>
       <button disabled={stock === 0} onClick={()=>onAdd(count)}>
         <span>{stock === 0 ? 'No tenemos stock' : 'Agrega al carrito'}</span>
       </button>
@@ -31,7 +31,12 @@ const styles = {
     container:{
       display: "flex",
       justifyContent: "center",
+      gap: '1rem',
       alignItems: "center",
+    },
+    button:{
+      paddingLeft: '1rem',
+      paddingRight: '1rem'
     }
   }
 

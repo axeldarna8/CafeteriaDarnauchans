@@ -8,6 +8,7 @@ export const styles = {
         marginLeft: '10%',
         marginRight: '10%',
         backgroundColor: 'brown',
+        fontFamily: 'Yellowtail, cursive',
     },
     imagenes: {
         height: '90%',
@@ -16,7 +17,6 @@ export const styles = {
     categorias: {
         margin: 10,
         color: 'black',
-        fontWeight: 'bold',
         textDecoration: 'none',
     }
 };
