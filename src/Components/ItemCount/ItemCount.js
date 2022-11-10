@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const ItemCount = ({ stock, initial, onAdd }) => {
   const [count, setCount] = useState(initial);
@@ -16,6 +17,7 @@ const ItemCount = ({ stock, initial, onAdd }) => {
   };
 
   return (
+    <>
     <div style={styles.container}>
       <button onClick={subtract} style={styles.button}>-</button>
       <h2>{count}</h2>
@@ -24,6 +26,12 @@ const ItemCount = ({ stock, initial, onAdd }) => {
         <span>{stock === 0 ? 'No tenemos stock' : 'Agrega al carrito'}</span>
       </button>
     </div>
+    <Link to={"/cart"}> 
+      <button style={styles.finalizar}>
+        Finalizar compra
+      </button>
+    </Link>
+    </>
   );
 };
 
@@ -37,6 +45,10 @@ const styles = {
     button:{
       paddingLeft: '1rem',
       paddingRight: '1rem'
+    },
+    finalizar:{
+      marginLeft: '30%',
+      marginRight: '30%'
     }
   }
 
