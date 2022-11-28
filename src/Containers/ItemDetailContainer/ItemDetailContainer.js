@@ -22,6 +22,7 @@ export const ItemDetailContainer = (props) => {
     };
     getProducts();
   }, [id]);
+  
   return (
     <>
         <p style={styles.container} > {props.greeting} </p>

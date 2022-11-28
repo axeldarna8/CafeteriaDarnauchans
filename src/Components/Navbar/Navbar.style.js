@@ -3,20 +3,21 @@ export const styles = {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-evenly',
-        height: 100,
+        height: '7rem',
         marginTop: 10,
-        marginLeft: '10%',
-        marginRight: '10%',
+        marginLeft: '7%',
+        marginRight: '7%',
         backgroundColor: 'brown',
         fontFamily: 'Yellowtail, cursive',
     },
     imagenes: {
-        height: '90%',
+        height: '80%',
         borderRadius: '55%',
     },
     categorias: {
         margin: 10,
         color: 'black',
         textDecoration: 'none',
+        fontSize: '1.5rem'
     }
 };

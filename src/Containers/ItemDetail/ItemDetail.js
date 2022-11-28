@@ -1,15 +1,20 @@
-import React from "react";
+import React, {useState, useContext} from "react";
 import ItemCount from "../../Components/ItemCount/ItemCount";
 import { Link } from "react-router-dom";
-import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
-import ImageListItemBar from '@mui/material/ImageListItemBar';
 import ListSubheader from '@mui/material/ListSubheader';
+import { Context } from "../../Context/CartContext";
 
 const ItemDetail = ({ product }) => {
+    
+    const { cart, agregarItem, estaenCarrito} = useContext(Context);
+
     const onAdd = (count) =>{
-      console.log("Se recibieron objetos en el carrito")
+      console.log("se agregaron " + count + " items");
+      agregarItem(product, count);
     };
+
+    
     return (
       <>
       <div style={styles.container}>
@@ -24,7 +29,7 @@ const ItemDetail = ({ product }) => {
             {product.description} 
           </div>
           <span >${product.price}</span>
-          <ItemCount stock={product.stock} initial={1} onAdd={onAdd}/>
+          <ItemCount stock={15} initial={1} onAdd={onAdd}/>
         </div>
       </div>
       </>
