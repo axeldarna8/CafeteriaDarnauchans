@@ -18,7 +18,7 @@ export const Cart = () => {
       <React.Fragment>
         <>
           {cart.map((producto) => (
-            <ImageList sx={{ width: 500, height: 450 }} style={styles.container}>
+            <ImageList sx={{ width: 350, height: 500 }} style={styles.container}>
               <ImageListItem key="Subheader" cols={2}>
                 <ListSubheader component="div" style={styles.title}></ListSubheader>
               </ImageListItem>
@@ -68,8 +68,13 @@ export const Cart = () => {
                 <FormRow/>
               </Grid>
               <Grid item xs={12} sm={4} md={3} >
-                <Typography  gutterBottom variant='h4' style={styles.container}>
-                  Items en carrito:  {quantity} 
+                <Typography  gutterBottom variant='h5' style={styles.container}>
+                <>
+                  <h3> Detalle </h3>
+                  {cart.map((producto) => (
+                    <h6> {producto.title} - Cantidad {producto.cantidad}</h6>
+                  ))}
+                </>
                 </Typography>
                 <Typography  gutterBottom variant='h4' style={styles.container}>
                   Total: ${total}
