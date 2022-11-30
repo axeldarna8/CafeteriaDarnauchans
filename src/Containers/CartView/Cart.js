@@ -35,7 +35,7 @@ export const Cart = () => {
                     style={styles.title}
                   />
                   <IconButton style={styles.deleteIcon}>
-                    <DeleteIcon fontSize='large' color='inherit'/>
+                    <DeleteIcon fontSize='large' color='inherit' onClick={() => deleteItem(producto.id)}/>
                   </IconButton>
               </ImageListItem>  
           </ImageList>
