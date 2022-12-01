@@ -10,7 +10,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 
 
 export const Cart = () => {
-  const { cart, quantity, total, clearCarrito, deleteItem } = useContext(Context);
+  const { cart, total, clearCarrito, deleteItem } = useContext(Context);
 
 
   function FormRow(){
@@ -60,7 +60,7 @@ export const Cart = () => {
           <div>
             <Grid container spacing={3} >
               <Grid item xs={12}>
-                <Typography align='center' gutterBottom variant='h4' style={styles.container}>
+                <Typography align='center' gutterBottom  style={styles.container}>
                   Carrito de compras
                 </Typography>
               </Grid>
@@ -68,7 +68,7 @@ export const Cart = () => {
                 <FormRow/>
               </Grid>
               <Grid item xs={12} sm={4} md={3} >
-                <Typography  gutterBottom variant='h5' style={styles.container}>
+                <Typography  gutterBottom  style={styles.container}>
                 <>
                   <h3> Detalle </h3>
                   {cart.map((producto) => (
@@ -76,7 +76,7 @@ export const Cart = () => {
                   ))}
                 </>
                 </Typography>
-                <Typography  gutterBottom variant='h4' style={styles.container}>
+                <Typography  gutterBottom  style={styles.container}>
                   Total: ${total}
                 </Typography>
                 <div style={styles.display}>

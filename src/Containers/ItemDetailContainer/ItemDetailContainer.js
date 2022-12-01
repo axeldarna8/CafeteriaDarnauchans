@@ -13,7 +13,8 @@ export const ItemDetailContainer = (props) => {
       try {
         const res = await fetch("https://fakestoreapi.com/products/" + id)
         const data = await res.json();
-        setProduct(data);
+        const objeto = {...data, stock:Math.floor(Math.random() * 50)}
+        setProduct(objeto);
       } catch {
         console.log("error");
       } finally {

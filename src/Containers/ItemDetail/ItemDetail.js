@@ -1,13 +1,12 @@
-import React, {useState, useContext} from "react";
+import React, {useContext} from "react";
 import ItemCount from "../../Components/ItemCount/ItemCount";
-import { Link } from "react-router-dom";
 import ImageListItem from '@mui/material/ImageListItem';
 import ListSubheader from '@mui/material/ListSubheader';
 import { Context } from "../../Context/CartContext";
 
 const ItemDetail = ({ product }) => {
     
-    const { cart, agregarItem, estaenCarrito} = useContext(Context);
+    const { agregarItem } = useContext(Context);
 
     const onAdd = (count) =>{
       console.log("se agregaron " + count + " items");
@@ -29,7 +28,7 @@ const ItemDetail = ({ product }) => {
             {product.description} 
           </div>
           <span >${product.price}</span>
-          <ItemCount stock={15} initial={1} onAdd={onAdd}/>
+          <ItemCount stock={product.stock} initial={1} onAdd={onAdd}/>
         </div>
       </div>
       </>
