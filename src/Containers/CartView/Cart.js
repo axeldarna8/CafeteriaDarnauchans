@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, {useContext, useState} from 'react';
 import { Context } from '../../Context/CartContext';
 import { Link } from "react-router-dom";
 import ImageList from '@mui/material/ImageList';
@@ -7,11 +7,32 @@ import ImageListItemBar from '@mui/material/ImageListItemBar';
 import ListSubheader from '@mui/material/ListSubheader';
 import { Grid, IconButton, Typography } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
+import { db } from '../../firebase/firebase';
+import { collection, addDoc, serverTimestamp, doc, updateDoc } from 'firebase/firestore';
 
 
 export const Cart = () => {
   const { cart, total, clearCarrito, deleteItem } = useContext(Context);
+  const [compraid, setCompraid] = useState('');
+  const [flag, setFlag] = useState(false);
 
+  const finalizarCompra = () =>{
+    const ventasCollection = collection(db, 'Ventas');
+    addDoc(ventasCollection, {
+      items: cart,
+      total,
+      date: serverTimestamp()
+    })
+    .then(result =>{
+      console.log(result.id);
+      setCompraid(result.id);
+      setFlag(true);
+    })
+    .catch(e =>{
+      console.log('e');
+    }); 
+    clearCarrito();
+  }
 
   function FormRow(){
     return(
@@ -48,12 +69,21 @@ export const Cart = () => {
     <>
       {cart.length === 0 ? (
         <>
+        {flag === false ?(
           <div style={styles.container}>
             <h1 >
               No agregaste productos aun, puedes ir <Link to="/" style={styles.link}>AQUI</Link>
             </h1>
             <h2>Gracias por tu visita</h2>
           </div>
+        ):(
+          <>
+          <div style={styles.container}>
+            <h1> Muchas gracias por su compra</h1>
+            <h2> Su ID de compra es: {compraid} </h2>
+          </div>
+          </>
+        )}  
         </>
       ) : (
         <>
@@ -80,7 +110,7 @@ export const Cart = () => {
                   Total: ${total}
                 </Typography>
                 <div style={styles.display}>
-                  <button >
+                  <button onClick={finalizarCompra}>
                     Finalizar compra
                   </button>
                   <button onClick={clearCarrito}>

@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ItemDetail from "../ItemDetail/ItemDetail";
+import { getDoc, collection, doc } from "firebase/firestore";
+import { db } from "../../firebase/firebase";
 
 export const ItemDetailContainer = (props) => {
   const [product, setProduct] = useState([]);
@@ -8,20 +10,24 @@ export const ItemDetailContainer = (props) => {
 
   const { id } = useParams();
 
+  
+
   useEffect(() => {
-    const getProducts = async () => {
-      try {
-        const res = await fetch("https://fakestoreapi.com/products/" + id)
-        const data = await res.json();
-        const objeto = {...data, stock:Math.floor(Math.random() * 50)}
-        setProduct(objeto);
-      } catch {
-        console.log("error");
-      } finally {
-        setLoading(false);
-      }
-    };
-    getProducts();
+
+    const productCollection = collection(db, 'Items')
+    const refDoc = doc(productCollection, id);
+
+    getDoc(refDoc)
+    .then(result =>{
+      setProduct({
+        id: result.id,
+        ...result.data()
+      })
+    })
+    .catch((error) =>{
+      console.log(error);
+    })
+    .finally(setLoading(false));
   }, [id]);
   
   return (

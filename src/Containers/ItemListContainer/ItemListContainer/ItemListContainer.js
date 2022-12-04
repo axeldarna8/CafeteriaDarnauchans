@@ -18,6 +18,8 @@ export const ItemListContainer = (props) => {
 
     const productCollection = collection(db, 'Items')
 
+    
+
     useEffect(() => {
 
       getDocs(productCollection)
