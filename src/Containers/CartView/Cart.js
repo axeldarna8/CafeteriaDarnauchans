@@ -5,7 +5,7 @@ import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import ImageListItemBar from '@mui/material/ImageListItemBar';
 import ListSubheader from '@mui/material/ListSubheader';
-import { Grid, IconButton, Typography } from '@mui/material';
+import { Grid, IconButton, TextField, Typography } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { db } from '../../firebase/firebase';
 import { collection, addDoc, serverTimestamp, doc, updateDoc } from 'firebase/firestore';
@@ -15,10 +15,21 @@ export const Cart = () => {
   const { cart, total, clearCarrito, deleteItem } = useContext(Context);
   const [compraid, setCompraid] = useState('');
   const [flag, setFlag] = useState(false);
+  const [name, setName] = useState('');
+  const [lastname, setLastname] = useState('');
+  const [email, setEmail] = useState('');
+
+ 
 
   const finalizarCompra = () =>{
     const ventasCollection = collection(db, 'Ventas');
+    const compradorxd ={
+      nombre: name,
+      apellido: lastname,
+      email: email
+    }
     addDoc(ventasCollection, {
+      compradorxd,
       items: cart,
       total,
       date: serverTimestamp()
@@ -109,6 +120,20 @@ export const Cart = () => {
                 <Typography  gutterBottom  style={styles.container}>
                   Total: ${total}
                 </Typography>
+                <form style={styles.display}>
+                  <label>
+                    Nombre:
+                    <input type="text" name="name" onChange={(e) => setName(e.target.value)}/>
+                  </label>
+                  <label>
+                    Apellido:
+                    <input type="text" name="lastname" onChange={(e) => setLastname(e.target.value)} />
+                  </label>  
+                  <label>
+                    Email:
+                    <input type="email" name="email" onChange={(e) => setEmail(e.target.value)}/>
+                  </label>                 
+                </form>
                 <div style={styles.display}>
                   <button onClick={finalizarCompra}>
                     Finalizar compra
