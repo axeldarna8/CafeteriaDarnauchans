@@ -2,6 +2,10 @@
 
 Esta tienda de objetos fue creada por mi mismo utilizando la base de datos de fakestore API para implementar la idea de un e-commerce basico aplicando los conocimientos adquiridos en el curso de CoderHouse.
 
+## Deploy del proyecto:
+
+https://gleeful-palmier-1a0c7d.netlify.app/
+
 ## Repositorio de github:
 
 https://github.com/axeldarna8/cafeteriadarnauchans
